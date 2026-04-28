@@ -1,0 +1,7 @@
+.pio/
+.idea/
+.DS_Store
+*.bin
+*.elf
+*.map
+include/secrets.h
