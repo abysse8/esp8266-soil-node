@@ -1,0 +1,102 @@
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: system-ui, sans-serif;
+  background: #0f1117;
+  color: #e2e8f0;
+  min-height: 100vh;
+}
+
+.app { display: flex; flex-direction: column; min-height: 100vh; }
+
+.app-header {
+  background: #1a1d27;
+  border-bottom: 1px solid #2d3748;
+  padding: 12px 24px;
+}
+.app-header h1 { font-size: 1.25rem; color: #4ade80; letter-spacing: 0.05em; }
+
+.app-main { display: flex; flex: 1; gap: 0; }
+
+.sidebar {
+  width: 280px;
+  border-right: 1px solid #2d3748;
+  padding: 16px;
+  background: #12151f;
+}
+.sidebar h2 { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em; color: #718096; margin-bottom: 12px; }
+
+.device-list { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+
+.device-item {
+  padding: 10px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  border: 1px solid #2d3748;
+  background: #1a1d27;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+  transition: border-color 0.15s;
+}
+.device-item:hover { border-color: #4a5568; }
+.device-item.selected { border-color: #4ade80; background: #1a2e1a; }
+
+.dot {
+  width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0;
+}
+.dot.online { background: #4ade80; box-shadow: 0 0 6px #4ade80; }
+.dot.offline { background: #f87171; }
+
+.device-id { font-size: 0.875rem; font-weight: 600; flex: 1; }
+.device-type { font-size: 0.7rem; color: #718096; }
+.last-seen { font-size: 0.65rem; color: #4a5568; width: 100%; }
+
+.capabilities { display: flex; gap: 4px; flex-wrap: wrap; width: 100%; }
+.badge {
+  font-size: 0.6rem;
+  padding: 2px 6px;
+  border-radius: 9999px;
+  background: #2d3748;
+  color: #a0aec0;
+}
+
+.content { flex: 1; padding: 24px; display: flex; flex-direction: column; gap: 24px; }
+.content h2 { font-size: 1.1rem; color: #e2e8f0; }
+.content h3 { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.08em; color: #718096; }
+
+.no-devices, .no-data, .no-selection { color: #4a5568; font-size: 0.875rem; padding: 8px 0; }
+
+.live-monitor { display: flex; flex-direction: column; gap: 12px; }
+.live-controls { display: flex; align-items: center; gap: 12px; }
+
+.live-btn {
+  padding: 8px 16px;
+  border-radius: 6px;
+  border: 1px solid #4a5568;
+  background: #1a1d27;
+  color: #e2e8f0;
+  cursor: pointer;
+  font-size: 0.875rem;
+  transition: all 0.15s;
+}
+.live-btn:hover { border-color: #4ade80; color: #4ade80; }
+.live-btn.active { border-color: #f87171; color: #f87171; }
+
+.live-badge {
+  font-size: 0.65rem;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 9999px;
+  background: #f87171;
+  color: #fff;
+  animation: pulse 1.2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+.live-chart { margin-top: 8px; }

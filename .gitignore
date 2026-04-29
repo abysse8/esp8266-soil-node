@@ -5,3 +5,8 @@
 *.elf
 *.map
 include/secrets.h
+firmware/soil_sensor/include/secrets.h
+backend/node_modules/
+backend/data/
+frontend/node_modules/
+frontend/dist/
